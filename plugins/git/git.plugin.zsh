@@ -111,12 +111,6 @@ alias gcsm='git commit --signoff --message'
 alias gcas='git commit --all --signoff'
 alias gcasm='git commit --all --signoff --message'
 alias gcb='git checkout -b'
-
-function gccd() {
-  git clone $@
-  cd "$(basename "$_" .git)"
-}
-
 alias gcf='git config --list'
 
 function gccd() {
@@ -126,12 +120,6 @@ function gccd() {
 compdef _git gccd=git-clone
 
 alias gcl='git clone --recurse-submodules'
-
-function gclcd() {
-  git clone --recurse-submodules $@
-  cd "$(basename "$_" .git)"
-}
-
 alias gclean='git clean -id'
 alias gpristine='git reset --hard && git clean -dffx'
 alias gcm='git checkout $(git_main_branch)'
